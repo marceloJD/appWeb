@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/listaalumnos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <title>GESTION DE ALUMNOS</title>
+</head>
+
+<body>
+    <header >
+        <div>
+            <ul class="menu-vertical">
+                <h2>Bienvenido </h2>
+                <h2>Supervisor</h2>
+                <li><a href="ListaAlumnos.html"><i class="fa-sharp fa-solid fa-graduation-cap icono"></i>Lista de Alumnos</a></li>
+                <li><a href="ListaNotas.html"><i class="fa-sharp fa-solid fa-book icono"></i>Listado de Notas</a></li>
+                <li><a href="listapesos.html"><i class="fa-sharp fa-solid fa-notes-medical icono"></i>Listado de Pesos</a></li>
+                <li><a href="/api/logout"><i class="fas fa-times icono"></i>Cerrar sesion</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class="dash">
+
+        <div class="logo">
+            <h1>SISTEMA DE AYUDA AL DOCENTE</h1>
+            <i class="fa-solid fa-user usuario"></i>
+        </div>
+
+        <div class="contenido">
+
+            <div class="conteiner">
+                <div>
+                    <h1 class="titul">
+                        Gestion de Alumnos
+                    </h1>
+                    <p> Ingrese los datos de los alumnos a mostrar</p>
+                </div>
+                <div class="forma">
+
+                        <form  class="formulario" id="formulario">
+                        <div class="izquierda">
+                            <div class="campos">
+                                <label for="DNI" > DNI  </label>
+                                <input class="izqui" placeholder="Digite DNI" name="DNI" id="DNI" type="number"/>
+                            </div>
+                            <div class="campos">
+                                <label for="Nombre" > Nombre  </label>
+                                <input  class="izqui" placeholder="Digite Nombre" name="Nombre" id="Nombre" type="text"/>
+                            </div>
+                            <div class="campos">
+                                <label for="Apellido" > Apellido  </label>
+                                <input  class="izqui" placeholder="Digite Apellido" name="Apellido" id="Apellido" type="text"/>
+                            </div>
+                        </div>
+                        <div class="derecha">
+                            <div class="campos">
+                                <label for="Correo" >Correo Institucional  </label>
+                                <input  class="izqui" placeholder="Digite Correo" name="Correo" id="Correo" type="email"/>
+                            </div>
+                            <div class="campos">
+                                <label class="campodireccion" for="Direccion" > Direccion  </label>
+                                <input  class="izqui" class="direccion" placeholder="Digite Direccion" name="Direccion" id="Direccion" type="text"/>
+                                
+                            </div>
+                            <!--<button id="editar" onclick="editarAlumno()">Editar</button>-->
+
+                        </div>
+                        </form>
+
+                    
+                </div>
+                <input class="agregar" type="submit" value="+ Agregar Alumno"></input>
+                <div class="excel">
+                    <p> Ingrese los datos de los alumnos a mostrar</p>
+                    <button class="cargarexcel" id="cargarexcel">Cargar desde Excel</button>
+                    
+                </div>
+            </div>
+
+            
+            <div class="conteiner">
+                <h2 class="titul">Edicion de Alumnos</h2>
+    
+                <p> Escoga el Curso y Profesor que desea filtrar</p>
+                <div class="filtros">
+                        <div class="campos">
+                            <label htmlFor="Curso" > Curso  </label>
+                            <select class="opciones" id="comboBoxCurso">
+                                <option class="opcion" value="seleciona un curso"> Selecciona un Curso</option>
+                            </select>
+                        </div>
+                        <div className="campos">
+                            <label htmlFor="Profesor" > Profesor  </label>
+                            <select class="opciones" id="comboBoxProfe">
+                                <option value="seleciona un profe"> Selecciona un Profesor </option>
+                            </select>
+                        </div>
+                        <button id="cargaralumno" >Cargar Alumno</button>
+                </div>
+        
+                <div class="table">
+                    <table id="miTabla">
+                        <thead>
+                            <tr>
+                                <th>Codigo</th>
+                                <th>DNI</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Correo</th>
+                                <th>Direccion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Codigo</td>
+                                <td>DNI</td>
+                                <td>Digite Nombre</td>
+                                <td>Digite Apellido</td>
+                                <td>Digite Correo</td>
+                                <td>Digite Direccion</td>
+        
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="botones">
+                    <!-- <button id="restablecer">Reestablecer</button> -->
+                    <button id="guardar" onclick="guardarDatos()" ><i class="fa-solid fa-floppy-disk icono"></i>Guardar cambios</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <script src="./JS/listaalumnos.js"></script>
+</body>
+</html>
