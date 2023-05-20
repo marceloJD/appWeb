@@ -101,10 +101,7 @@ cargaralumno.addEventListener("click",function(){
 
 formulario.addEventListener('submit', e => {
   e.preventDefault(); // Previene que se recargue la página al enviar el formulario
-  var submitButton = document.activeElement;
-  if(submitButton.value!='Agregar Alumno'){
-    return;
-  }
+
   const dni = document.getElementById('DNI').value;
   const nombre = document.getElementById('Nombre').value;
   const apellido = document.getElementById('Apellido').value;

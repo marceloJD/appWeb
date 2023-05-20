@@ -3,19 +3,16 @@
     margin: 0;
     box-sizing: border-box;
     background-color:rgba(255, 196, 144, 1);
-    font-family: 'Inter', sans-serif;
-
+    font-family:'Times New Roman', Times, serif;
 }
 .menu-vertical {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    top: 0;
-    bottom: 0;
-    position: fixed;
-    height:100%;
     width:250px;
     background-color: rgba(255, 137, 35, 1);
+    position: fixed;
+    height: 100%;
     overflow: auto;
     display: flex;
     flex-direction: column;
@@ -64,6 +61,7 @@ h2{
 
     background-color:rgba(255, 137, 35, 1);
     color:#ffff;
+    font-family:'Times New Roman', Times, serif;
     font-weight: 700;
     font-size: 30px;
 
@@ -76,21 +74,19 @@ h2{
 }
 
 .logo{
-    width: 100%;
-    margin: 0 auto;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     background-color:rgba(255, 137, 35, 1);
+    width:100%;
     padding: 10px;
-    
 }
 h1{
     padding: 10px;
     background-color:rgba(255, 137, 35, 1);
     color: #fffafa;
     text-align: center;
-    font-family: 'Itim', cursive;
+    font-family:'Times New Roman', Times, serif;
     font-weight: normal;
     font-size: 30px;
     line-height: 36px;
@@ -103,18 +99,16 @@ h1{
 }
 .dash{
     position:absolute;
-    width:80%;
-    bottom: 0;
+    width:83%;
     right: 0;
-    top: 100px;
-    height: auto;
+    top: 0;
+    height: 100%;
     left:250px;
 }
 .dash .contenido{
     background-color:rgba(255, 196, 144, 1);
     width: 100%;
     height: auto;
-    position: relative;
 }
 .conteiner{
     border-radius: 5px;
@@ -149,6 +143,7 @@ label{
     font-size: 20px;
     background-color:rgba(255, 174, 105, 1);
     color: rgb(255, 255, 255);
+
 }
 .curso{
     border-radius: 100px;
@@ -220,11 +215,10 @@ p{
 
 .table{
     background-color:rgba(255, 174, 105, 1);
-
 }
 table{
     background-color:rgba(255, 174, 105, 1);
-    width: 90%;
+
     margin: 10px auto;
     text-align: center;
     border-collapse: collapse;
@@ -239,20 +233,15 @@ thead th{
     color: #ffffff;
     border: none;
     font-size: 20px;
-    font-family: 'Inika', serif;
 
 }
 tbody td{
     padding: 15px;
     background-color:  white;
-    height: 40px;
 }
 .guardar{
     padding: 0 5px;
     font-size: 20px;
     color: #271616;
     background-color:rgba(255, 137, 35, 1);
-}
-#cargarcurso{
-    width: 150px;
 }

@@ -31,83 +31,8 @@ res.map( opcion => {
 
 
 cargarcurso.addEventListener("click",function(){
+
   let cur = document.getElementById('comboBox').value;
-  fetch('/api/obtenerListaDePesos',{
-    method:"POST",
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({curso:cur})
-  })
-  .then(response => response.json())
-  .then(res => {
-    console.log(res)
-    res = res.data;
-    let titulo = {
-      "CODIGO": false,
-      "Nombre": false,
-      "Apellidos": false,
-    }
-
-    for(let i = 0 ; i< res.length;i++){
-      titulo["Nota: "+res[i].nombre]=true;
-    }
-    
-    const thead = document.querySelector('#miTabla thead tr');
-    let contenido=" ";
-    Object.keys(titulo).map(ti=>{
-    contenido=contenido+`<th>${ti}</th>`
-    })
-    thead.innerHTML=contenido
-    fetch('/api/obtenerListaDeAlumnosConNotas',{
-      method:"POST",
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({curso:cur})
-    })
-    .then(response => response.json())
-    .then(res2 => {
-      
-      res2 = res2.data;
-      console.log(res2)
-      const tbody = document.querySelector('#miTabla tbody');
-      let c = ""
-      for(let i = 0 ; i< res2.length;i++){
-        console.log(res2[i].CODIGO)
-        let contenido="<tr> ";
-        contenido=contenido+`<td><input 
-        type="text" 
-        value=${res2[i].CODIGO}
-          disabled></input></td>`
-        
-        contenido=contenido+`<td><input 
-        type="text" 
-        value=${res2[i].Nombre}
-        disabled></input></td>`
-        contenido=contenido+`<td><input 
-        type="text" 
-        value=${res2[i].Apellidos}
-        disabled></input></td>`
-        for(let j = 0 ; j< res.length;j++){
-          contenido=contenido+`<td>
-          <input 
-          type="number" 
-          value=${res2[i].notas}
-          ></input></td>`
-          console.log(res2[i].notas.filter((e)=>{
-            return e.nombre == res[i].nombre
-          }))
-        }
-        contenido=contenido+'</tr>'
-        c=c+contenido
-      }
-  
-     
-      tbody.innerHTML=c
-      
-    })
-  })
-
-
-  
-  /*
   fetch('/api/obtenerListaDeAlumnosConNotas',{
     method:"POST",
     headers: {'Content-Type': 'application/json'},
@@ -188,11 +113,10 @@ cargarcurso.addEventListener("click",function(){
       `;
       tbody.appendChild(tr);
     });
-
 })
 
-*/
- //guardarDatos()
+
+ guardarDatos()
 
 });
 /*

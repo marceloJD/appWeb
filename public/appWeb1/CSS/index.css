@@ -1,6 +1,6 @@
 
 body {
-  font-family: 'Inter', sans-serif;
+    font-family:'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
     background-color: #FFC490;
@@ -28,7 +28,6 @@ body {
   h1 {
     text-align: center;
     color: #FFFFFF;
-    font-family: 'Inter', sans-serif;
   }
 
   label {
@@ -74,14 +73,12 @@ body {
 
   
   .material-icons{
-    font-size:40px;
-    position:left;
-    color: rgb(223, 42, 42);
+     font-size: 40px;
+     position:left;
   } 
 
   .contenedor_icon{
    display: flex;
-   align-items: center;
   }
 
 .opciones{
@@ -92,12 +89,10 @@ body {
     color: black;
     background-color: #fff;
     margin: 0 auto;
-    border: none;
 }
 option{
     background-color: #fff;
     color: black;
-    border: none;
 }
 .titulo{
 
@@ -106,7 +101,7 @@ background: #FF8923;
 margin: 0;
 padding: 10px;
 font-size: 40px;
-font-family: 'Itim', cursive;
+font-family:'Times New Roman', Times, serif;
 }
 .rol{
     display: flex;

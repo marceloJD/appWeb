@@ -8,36 +8,26 @@ const cargaralumno=document.getElementById('cargaralumno');
 
 
 
-fetch('/api/obtenerListaCursos',{
-  method:"POST",
-  headers: {'Content-Type': 'application/json'},
-  body: JSON.stringify({})
-})
+fetch('./comboCurso.json')
 .then(response => response.json())
 .then(res => {console.log(res)
 var comboBox=document.getElementById("comboBoxCurso");
-res=res.data;
 res.map( opcion => {
   var option = document.createElement('option');
-  option.value = opcion.CODIGO;
-  option.textContent = opcion.Nombre;
+  option.value = opcion.id;
+  option.textContent = opcion.nombre;
   comboBoxCurso.appendChild(option);
 });
 })
 
-fetch('/api/obtenerListaProfesores',{
-  method:"POST",
-  headers: {'Content-Type': 'application/json'},
-  body: JSON.stringify({})
-})
+fetch('./comboProfesor.json')
 .then(response => response.json())
 .then(res => {console.log(res)
 var comboBoxProfe=document.getElementById("comboBoxProfe");
-res=res.data;
 res.map( opcion => {
   var option = document.createElement('option');
-  option.value = opcion.CODIGO;
-  option.textContent = opcion.Nombre;
+  option.value = opcion.id;
+  option.textContent = opcion.nombre;
   comboBoxProfe.appendChild(option);
 });
 })
@@ -55,9 +45,8 @@ let titulo = {
 }
 
 cargaralumno.addEventListener("click",function(){
-    let PROFESOR = document.getElementById("comboBoxProfe").value;
-    let CURSO=document.getElementById("comboBoxCurso").value;
-    console.log(PROFESOR,CURSO)
+
+    console.log(123)
     const thead = document.querySelector('#miTabla thead tr');
     let contenido=" ";
     Object.keys(titulo).map(ti=>{
@@ -69,7 +58,7 @@ cargaralumno.addEventListener("click",function(){
     const requestInit ={
       method:"POST",
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({"profesor":PROFESOR,"curso":CURSO})
+      body: JSON.stringify({"curso":1,"profesor":1})
     }
     fetch('/api/obtenerListaDeAlumnos',requestInit)
     .then(response => response.json())
@@ -101,10 +90,7 @@ cargaralumno.addEventListener("click",function(){
 
 formulario.addEventListener('submit', e => {
   e.preventDefault(); // Previene que se recargue la página al enviar el formulario
-  var submitButton = document.activeElement;
-  if(submitButton.value!='Agregar Alumno'){
-    return;
-  }
+
   const dni = document.getElementById('DNI').value;
   const nombre = document.getElementById('Nombre').value;
   const apellido = document.getElementById('Apellido').value;
@@ -124,11 +110,11 @@ const requestInit ={
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(datos)
 }
-  fetch('/api/ingresarAlumno',requestInit)
+  fetch('http://localhost:3000/api/ingresarAlumno',requestInit)
   .then(res=>res.json())
   .then(res=>{
     console.log(res)
-    if(res.resultado){
+    if(res.mensaje=='OK'){
       alert("Alumno ingresado")
     }else{
       alert("Error al registrar alumno")
@@ -158,11 +144,11 @@ function editarAlumno(){
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(datos)
 }
-  fetch('/api/editarAlumno',requestInit)
+  fetch('http://localhost:3000/api/editarAlumno',requestInit)
   .then(res=>res.json())
   .then(res=>{
     console.log(res)
-    if(res.resultado){
+    if(res.mensaje=='OK'){
       alert("Alumno modificado")
     }else{
       alert("Error al registrar cambios")
@@ -204,11 +190,11 @@ function editarAlumno(){
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(info)
   }
-    fetch('/api/modificarListaDeAlumnos',requestInit)
+    fetch('http://localhost:3000/api/modificarListaDeAlumnos',requestInit)
     .then(res=>res.json())
     .then(res=>{
       console.log(res)
-      if(res.resultado){
+      if(res.mensaje=='OK'){
         alert("Cambios ingresados correctamente")
       }else{
         alert("Error al registrar cambios")

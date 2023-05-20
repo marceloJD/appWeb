@@ -5,9 +5,6 @@
   <title>Iniciar sesión</title>
   <link rel="stylesheet" href="./CSS/index.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
@@ -15,7 +12,7 @@
 </header>
   <div id="contenedor">
     <form id="loginForm">
-      <h1>LOGIN</h1>
+      <h1>Iniciar sesión</h1>
       <div class="contenedor_icon">
           <i class="material-icons">account_circle</i>
           &nbsp;
@@ -65,12 +62,7 @@
       .then(data => {
         if (data.OK === true) {
           // Redirigir a otra página si la respuesta es OK=true
-          
-          if(rol=='admin'){
-            window.location.href = '/appWeb/ListaAlumnos.html';
-          }else{
-            window.location.href = '/appWeb/ListaNotas.html';
-          }
+          window.location.href = '/appWeb/ListaAlumnos.html';
         } else {
           // Mostrar un mensaje de error si la respuesta no es OK=true
           document.getElementById('errorMessage').textContent = 'Inicio de sesión fallido';

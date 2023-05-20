@@ -1,7 +1,9 @@
 const jwt = require('jsonwebtoken');
 let SECRET_KEY="HOLA";
 const authenticateJWT = (req, res, next) => {
+    //console.log(req.cookies)
     next();
+
     /*
     // Obtener el token de la cookie HTTP Only
     const token = req.cookies.jwt;

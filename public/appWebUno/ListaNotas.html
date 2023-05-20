@@ -6,43 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/listanotas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
     <title>Gestion de Notas</title>
 </head>
 
 <body>
-            <div class="logo">
-                <h1>SISTEMA DE AYUDA AL DOCENTE</h1>
-                <i class="fa-solid fa-user usuario"></i>
-            </div>
-            
     <header >
-        
         <div>
             <ul class="menu-vertical">
-                <div class="profesor">
-                    <h2>Bienvenido, </h2>
-                    <h2>Profesor</h2>
-                </div>
-                <li><a href="ListaNotas.html"><i class="fa-solid fa-pen-to-square icono"></i>Ingreso de notas</a></li>
-                <li><a href="listapesos.html"><i class="fa-solid fa-gear icono"></i>Configuracion de variables</a></li>
-                <li><a href="#"><i class="fa-solid fa-calendar-days icono"></i>Ingreso de fecha</a></li>
-                <li><a href="#"><i class="fa-solid fa-power-off icono"></i>Salir</a></li>
-
+                <h2>Bienvenido </h2>
+                <h2>Supervisor</h2>
+                <li><a href="ListaAlumnos.html"><i class="fa-sharp fa-solid fa-graduation-cap icono"></i>Lista de Alumnos</a></li>
+                <li><a href="ListaNotas.html"><i class="fa-sharp fa-solid fa-book icono"></i>Listado de Notas</a></li>
+                <li><a href="listapesos.html"><i class="fa-sharp fa-solid fa-notes-medical icono"></i>Listado de Pesos</a></li>
             </ul>
         </div>
     </header>
 
     <section class="dash"> 
 
+        <div class="logo">
+            <h1>SISTEMA DE AYUDA AL DOCENTE</h1>
+            <i class="fa-solid fa-user usuario"></i>
+        </div>
 
         <div class="contenido">
-
             <div class="conteiner">
-                <h3 class="titulo"><i class="fa-solid fa-pen-to-square icono"></i>Ingreso de Notas</h3>
-                <p> 1. Ingrese el curso en el que desea subir notas.</p>
+                <h3 class="titulo">Ingreso de Notas</h3>
+                <p> Escoga el curso que desea filtrar</p>
                 <div class="filtros">
                         <div class="campos">
                             <label For="Curso" > Curso  </label>
@@ -50,13 +41,13 @@
                                 <option value="seleciona"> Selecciona una Opcion</option>
                             </select>
                         </div>
-                        <button id="cargarcurso" >Cargar</button>
+                        <button id="cargarcurso" >Cargar Curso</button>
                 </div>
             </div>
             
             <div class="conteiner">
                 <div class="table">
-                    <p> 2. Seleccione la casilla para ingresar la nota respectiva</p>
+                    <p> Seleccione la casilla para ingresar la nota respectiva</p>
                     <table id="miTabla">
                         <thead>
                             <tr>

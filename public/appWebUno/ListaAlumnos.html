@@ -6,90 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/listaalumnos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
 
     <title>GESTION DE ALUMNOS</title>
 </head>
 
 <body>
-    <div class="logo">
-        <h1>SISTEMA DE AYUDA AL DOCENTE</h1>
-        <i class="fa-solid fa-user usuario"></i>
-    </div>
     <header >
         <div>
             <ul class="menu-vertical">
-
-                <div class="profesor">
-                    <h2>Bienvenido, </h2>
-                    <h2>Supervisor</h2>
-                </div>
-
-                <li><a href="ListaAlumnos.html"><i class="fa-sharp fa-solid fa-graduation-cap icono"></i>Gestion de Alumnos</a></li>
-                <li><a href="#"><i class="fa-sharp fa-solid fa-book icono"></i>Asignacion de Cursos</a></li>
-                <li><a href="/api/logout"><i class="fa-solid fa-power-off icono"></i>Salir</a></li>
+                <h2>Bienvenido </h2>
+                <h2>Supervisor</h2>
+                <li><a href="ListaAlumnos.html"><i class="fa-sharp fa-solid fa-graduation-cap icono"></i>Lista de Alumnos</a></li>
+                <li><a href="ListaNotas.html"><i class="fa-sharp fa-solid fa-book icono"></i>Listado de Notas</a></li>
+                <li><a href="listapesos.html"><i class="fa-sharp fa-solid fa-notes-medical icono"></i>Listado de Pesos</a></li>
+                <li><a href="/api/logout"><i class="fas fa-times icono"></i>Cerrar sesion</a></li>
             </ul>
         </div>
     </header>
     <section class="dash">
 
-
+        <div class="logo">
+            <h1>SISTEMA DE AYUDA AL DOCENTE</h1>
+            <i class="fa-solid fa-user usuario"></i>
+        </div>
 
         <div class="contenido">
 
             <div class="conteiner">
                 <div>
                     <h1 class="titul">
-                        <i class="fa-sharp fa-solid fa-graduation-cap icono"></i>Gestion de Alumnos
+                        Gestion de Alumnos
                     </h1>
                     <p> Ingrese los datos de los alumnos a mostrar</p>
                 </div>
                 <div class="forma">
 
                         <form  class="formulario" id="formulario">
-
                         <div class="izquierda">
                             <div class="campos">
-                                <input  class="izqui" placeholder="Nombre completo" name="Nombre" id="Nombre" type="text"/>
+                                <label for="DNI" > DNI  </label>
+                                <input class="izqui" placeholder="Digite DNI" name="DNI" id="DNI" type="number"/>
                             </div>
                             <div class="campos">
-                                <input  class="izqui" placeholder="Correo electronico" name="Correo" id="Correo" type="email"/>
+                                <label for="Nombre" > Nombre  </label>
+                                <input  class="izqui" placeholder="Digite Nombre" name="Nombre" id="Nombre" type="text"/>
+                            </div>
+                            <div class="campos">
+                                <label for="Apellido" > Apellido  </label>
+                                <input  class="izqui" placeholder="Digite Apellido" name="Apellido" id="Apellido" type="text"/>
                             </div>
                         </div>
-
-                        <div class="medio">
-                            <div class="campos">
-                                <input  class="izqui" placeholder="Apellido completo" name="Apellido" id="Apellido" type="text"/>
-                            </div>
-                            <div class="campos">
-                                <input  class="izqui" class="Direccion" placeholder="Digite Direccion" name="Direccion" id="Direccion" type="text"/>
-                            </div>
-                        </div>
-
                         <div class="derecha">
                             <div class="campos">
-                                <input class="izqui" placeholder="DNI" name="DNI" id="DNI" type="number"/>
+                                <label for="Correo" >Correo Institucional  </label>
+                                <input  class="izqui" placeholder="Digite Correo" name="Correo" id="Correo" type="email"/>
                             </div>
                             <div class="campos">
-
+                                <label class="campodireccion" for="Direccion" > Direccion  </label>
+                                <input  class="izqui" class="direccion" placeholder="Digite Direccion" name="Direccion" id="Direccion" type="text"/>
+                                
                             </div>
+                            <!--<button id="editar" onclick="editarAlumno()">Editar</button>-->
+
                         </div>
-
-                        <button class=" " id="editar" onclick="editarAlumno()">Editar</button>
-                        <input class="agregar" type="submit" value="Agregar Alumno"></input>
-
                         </form>
 
                     
                 </div>
-
-                
-
+                <input class="agregar" type="submit" value="+ Agregar Alumno"></input>
                 <div class="excel">
-                    <p> Tambien puede ingresar los alumnos mediante un archivo excel</p>
-                    <button class="cargarexcel" id="cargarexcel">Cargar excel</button>
+                    <p> Ingrese los datos de los alumnos a mostrar</p>
+                    <button class="cargarexcel" id="cargarexcel">Cargar desde Excel</button>
                     
                 </div>
             </div>
@@ -98,18 +86,18 @@
             <div class="conteiner">
                 <h2 class="titul">Edicion de Alumnos</h2>
     
-                <p> Ingrese el curso o profesor para filtrar los alumnos</p>
+                <p> Escoga el Curso y Profesor que desea filtrar</p>
                 <div class="filtros">
                         <div class="campos">
                             <label htmlFor="Curso" > Curso  </label>
                             <select class="opciones" id="comboBoxCurso">
-                                <option class="opcion" value=0> Selecciona un Curso</option>
+                                <option class="opcion" value="seleciona un curso"> Selecciona un Curso</option>
                             </select>
                         </div>
-                        <div class="campos">
+                        <div className="campos">
                             <label htmlFor="Profesor" > Profesor  </label>
                             <select class="opciones" id="comboBoxProfe">
-                                <option value=0> Selecciona un Profesor </option>
+                                <option value="seleciona un profe"> Selecciona un Profesor </option>
                             </select>
                         </div>
                         <button id="cargaralumno" >Cargar Alumno</button>
@@ -136,22 +124,6 @@
                                 <td>Digite Correo</td>
                                 <td>Digite Direccion</td>
         
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
                             </tr>
                         </tbody>
                     </table>

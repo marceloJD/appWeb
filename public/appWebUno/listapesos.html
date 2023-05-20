@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/listapesos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Lista de Pesos</title>
+</head>
+<body>
+    <header >
+        <div>
+            <ul class="menu-vertical">
+                <h2>Bienvenido </h2>
+                <h2>Supervisor</h2>
+                <li><a href="ListaAlumnos.html"><i class="fa-sharp fa-solid fa-graduation-cap icono"></i>Lista de Alumnos</a></li>
+                <li><a href="ListaNotas.html"><i class="fa-sharp fa-solid fa-book icono"></i>Listado de Notas</a></li>
+                <li><a href="listapesos.html"><i class="fa-sharp fa-solid fa-notes-medical icono"></i>Listado de Pesos</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="dash">
+        
+        <div class="logo">
+            <h1>SISTEMA DE AYUDA AL DOCENTE</h1>
+            <i class="fa-solid fa-user usuario"></i>
+        </div>
+
+        <div class="contenido">
+            <div class="conteiner">
+                <div>
+                    <h1 class="titulo">Configuracion de las variables</h1>
+                </div>
+                <p> En esta seccion podrá designar los pesos correspondientes a las variables de las notas del curso</p>
+    
+                <div class="filtros">
+                    <div class="campos">
+                        <label for="Buscar" class="seleccion" > Seleccione un curso :  </label>
+                        <select class="opciones" id="comboBox">
+                            <option value="seleciona un curso"> Selecciona un Curso</option>
+                        </select>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="conteiner">
+                <div class="adicionar">
+                    <p> Agregue las variables de las notas de su curso</p>
+                    </div>
+        
+                    
+                    
+                    <div class="table">
+        
+                    </div>
+                    
+                    <div class="botones">
+                        <!-- <button id="restablecer">Reestablecer</button> --> 
+                        <button id="guardar" onclick="guardarDatos()" ><i class="fa-sharp fa-solid fa-floppy-disk icono"></i>Guardar cambios</button>
+                    </div>
+            </div>
+ 
+        </div>
+    </section>
+    
+    <script src="./JS/listapesos.js"></script>
+</body>
+</html>

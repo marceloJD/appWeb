@@ -62,14 +62,16 @@ app.post('/api/login',(pregunta,respuest)=>{
     };
     const token = jwt.sign(payload, SECRET_KEY);
     respuest.cookie('jwt', token, { httpOnly: true });
-    
+    respuest.cookie('usuario', usuario, { httpOnly: true });
+    respuest.cookie('rol', rol, { httpOnly: true });
     respuest.json({ OK: true });
 })
 //LOGOUT
 app.get('/api/logout',(pregunta,respuesta)=>{
     // Eliminar la cookie HTTP Only
     respuesta.clearCookie('jwt');
-
+    respuesta.clearCookie('usuario');
+    respuesta.clearCookie('rol');
     //rediriga a appWeb/index.html
     respuesta.redirect('/appWeb/index.html');
 })

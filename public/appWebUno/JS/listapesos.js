@@ -2,17 +2,6 @@ const formulario = document.getElementById('formulario');
 const botonGuardar = document.getElementById("guardar");
 const agregar = document.getElementById("agregar");
 
-const carousel = document.querySelector('.carousel');
-const prevButton = document.querySelector('.prev-button');
-const nextButton = document.querySelector('.next-button');
-
-prevButton.addEventListener('click', () => {
-  carousel.scrollLeft -= carousel.offsetWidth;
-});
-
-nextButton.addEventListener('click', () => {
-  carousel.scrollLeft += carousel.offsetWidth;
-});
 
 fetch('./comboCurso.json')
 .then(response => response.json())
@@ -58,21 +47,21 @@ function recargarEstado(){
 
                 <td>
 
-                <input class=" form" name="curso" type="text" value=${notas[i].nombre} oninput="actualizarVariable(this.value,${i},'nombre')"></input>
+                <input name="curso" type="text" value=${notas[i].nombre} oninput="actualizarVariable(this.value,${i},'nombre')"></input>
                 </td>
                 <td>
 
-                <input class= "form " name="nombre" type="text" value=${notas[i].descripcion} oninput="actualizarVariable(this.value,${i},'descripcion')"></input>
+                <input name="nombre" type="text" value=${notas[i].descripcion} oninput="actualizarVariable(this.value,${i},'descripcion')"></input>
                 </td>
                 <td>
 
-                <input class=" form" name="peso" type="text" value=${notas[i].peso} oninput="actualizarVariable(this.value,${i},'peso')"></input>
+                <input name="peso" type="text" value=${notas[i].peso} oninput="actualizarVariable(this.value,${i},'peso')"></input>
 
                 </td>
                 <button class="delete"   onclick="removerElemento(${i})">
-                    <i class="fa-solid fa-trash-can"></i> 
+                    Borrar
                 </button>
-                <button class="mas" style="position: absolute; top: 50%; left: 100%; transform: translate(-50%, -50%); width:50px "  onclick="anadirNota(${i+1})">
+                <button  style="position: absolute; top: 50%; left: 100%; transform: translate(-50%, -50%); width:50px"  onclick="anadirNota(${i+1})">
                     +
                 </button>
 

@@ -33,6 +33,7 @@ class PesosDAO{
     
     }
     async obtenerPesos(curso, profesor ){
+        console.log("PRUEBA",curso, profesor)
         let connection;
         let result =false;
         try {

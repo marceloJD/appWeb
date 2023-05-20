@@ -3,13 +3,13 @@ const NotasDAO = require("../modelo/NotasDAO");
 const PesosDAO = require("../modelo/PesosDAO");
 
 let ObtenerListaDePesos = async (pregunta , respuesta)=>{   
-    let profesor = pregunta.body.profesor;
+    let profesor = pregunta.cookies.usuario||pregunta.body.profesor;
     let curso = pregunta.body.curso;
     let Pesos = new PesosDAO();
     
     let data = await Pesos.obtenerPesos(curso,profesor);
     if(data){
-        console.log(data[0].pesos)
+       
         respuesta.json(new Respuesta(200,false,true,JSON.parse(data[0].pesos),"OK") );
     }else{
         respuesta.json(new Respuesta(400,true,false,[],"ERROR"));

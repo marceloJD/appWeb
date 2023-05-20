@@ -34,8 +34,9 @@ let ModificarListaDePesos = async (pregunta , respuesta)=>{
 }
 
 let ObtenerListaDeAlumnosConNotas = async (pregunta , respuesta)=>{   
-    let profesor = pregunta.body.profesor;
+    let profesor = pregunta.cookies.usuario||pregunta.body.profesor;
     let curso = pregunta.body.curso;
+    console.log(profesor,curso)
     let Notas = new NotasDAO();
     
     let data = await Notas.obtenerNotas(curso,profesor);
@@ -70,7 +71,8 @@ let IngresarAlumno = async (pregunta , respuesta)=>{
 }
 
 let ObtenerListaDeAlumnos = async (pregunta , respuesta)=>{   
-    let profesor = pregunta.body.profesor;
+    console.log(pregunta.body)
+    let profesor = pregunta.cookies.usuario||pregunta.body.profesor;
     let curso = pregunta.body.curso;
     let alumnos = new AlumnoDAO();
     let data = await alumnos.obtenerListaDeAlumnos(curso,profesor);
